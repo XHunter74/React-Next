@@ -1,4 +1,5 @@
-FROM node:20-alpine
+# Build Stage
+FROM node:20-alpine AS build
  
 # Set the working directory inside the container
 WORKDIR /app
@@ -11,7 +12,11 @@ RUN npm install
  
 # Copy the rest of your application files
 COPY . .
- 
+
+ENV NODE_ENV=production
+
+RUN npm run build
+
 # Expose the port your app runs on
 EXPOSE 3000
  
