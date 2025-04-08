@@ -31,10 +31,16 @@ export default function Home() {
 
   const closePopup = () => setPopup({ ...popup, visible: false });
 
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
+
   return (
     <div
       className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]"
-      style={{ backgroundImage: "url('/background.jpg')", backgroundSize: "cover", backgroundPosition: "center" }}
+      style={{
+        backgroundImage: `url('${basePath}/background.jpg')`,
+        backgroundSize: "cover",
+        backgroundPosition: "center"
+      }}
     >
       <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
         <h1 className="text-2xl font-bold text-center sm:text-left">Welcome to Charity Funnel</h1>
