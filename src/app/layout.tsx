@@ -15,6 +15,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Sample landing page",
   description: "A sample landing page for a charity funnel",
+  icons: {
+    icon: "/favicon.png",
+  }
 };
 
 export default function RootLayout({
