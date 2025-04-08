@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useState } from "react";
 import Popup from "../components/Popup";
 
@@ -38,6 +37,10 @@ export default function Home() {
       style={{ backgroundImage: "url('/background.jpg')", backgroundSize: "cover", backgroundPosition: "center" }}
     >
       <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
+        <h1 className="text-2xl font-bold text-center sm:text-left">Welcome to Charity Funnel</h1>
+        <p className="text-center sm:text-left max-w-md">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        </p>
         <form
           onSubmit={handleSubmit}
           className="flex flex-col gap-4 items-center sm:items-start w-full max-w-md"
