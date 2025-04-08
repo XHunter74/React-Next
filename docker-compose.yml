@@ -1,0 +1,8 @@
+services:
+  landing-ui:
+    image: foundation-ui
+    ports:
+      - "9999:3000"
+    build:
+      context: .
+      dockerfile: Dockerfile
