@@ -1,8 +1,8 @@
 services:
   landing-ui:
-    image: foundation-ui
+    image: landing-ui
     ports:
-      - "9999:3000"
+      - "9999:80"
     build:
       context: .
       dockerfile: Dockerfile

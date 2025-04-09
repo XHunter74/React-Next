@@ -8,17 +8,17 @@ WORKDIR /app
 COPY package*.json ./
  
 # Install dependencies
-RUN npm install
+RUN npm install -g pnpm@latest-10
+RUN pnpm install
  
 # Copy the rest of your application files
 COPY . .
 
 ENV NODE_ENV=production
 
-RUN npm run build
+RUN pnpm run build
 
-# Expose the port your app runs on
-EXPOSE 3000
- 
-# Define the command to run your app
-CMD ["npm", "start"]
+FROM nginx:1.27.4-alpine
+COPY nginx.conf /etc/nginx/nginx.conf
+COPY --from=build /app/out /usr/share/nginx/html
+CMD ["/bin/sh",  "-c",  "exec nginx -g 'daemon off;'"]
