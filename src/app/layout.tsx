@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { Config } from "./config";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -12,13 +13,11 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
-
 export const metadata: Metadata = {
   title: "Sample landing page",
   description: "A sample landing page for a charity funnel",
   icons: {
-    icon: `${basePath}/favicon.png`,
+    icon: `${Config.basePath}/favicon.png`,
   }
 };
 

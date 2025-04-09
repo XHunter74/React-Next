@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Popup from "../components/Popup";
+import { Config } from "../app/config";
 
 export default function Home() {
   const [email, setEmail] = useState("");
@@ -31,13 +32,11 @@ export default function Home() {
 
   const closePopup = () => setPopup({ ...popup, visible: false });
 
-  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
-
   return (
     <div
       className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]"
       style={{
-        backgroundImage: `url('${basePath}/background.jpg')`,
+        backgroundImage: `url('${Config.basePath}/background.jpg')`,
         backgroundSize: "cover",
         backgroundPosition: "center"
       }}
